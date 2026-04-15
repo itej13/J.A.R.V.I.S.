@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J.A.R.V.I.S.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  
+  <div class="ui-overlay">
+    <div class="audio-bar">
+      <div class="audio-level" id="audioLevel"></div>
+    </div>
+    
+    <div class="status-text" id="statusText">STANDBY</div>
+    
+    <div class="activity-panel">
+      <div class="panel-header">ACTIVITY FEED</div>
+      <div class="activity-feed" id="activityFeed"></div>
+    </div>
+    
+    <div class="chat-panel">
+      <div class="chat-messages" id="chatMessages"></div>
+    </div>
+    
+    <div class="input-bar">
+      <input type="text" id="textInput" placeholder="Type or hold space to speak..." autocomplete="off">
+      <button class="send-btn" id="sendBtn">SEND</button>
+      <button class="reset-btn" id="resetBtn">NEW</button>
+    </div>
+  </div>
+  
+  <script type="module" src="app.js"></script>
+</body>
+</html>
