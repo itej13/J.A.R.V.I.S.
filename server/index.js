@@ -7,13 +7,7 @@ const fs = require('fs');
 const chatRoutes = require('./routes/chat');
 const claudeCodeRoutes = require('./routes/claude-code');
 const toolsRoutes = require('./routes/tools');
-
-const apiKey = process.env.OPENROUTER_API_KEY;
-if (!apiKey) {
-  console.warn('WARNING: OPENROUTER_API_KEY is not set. Chat features will not work.');
-} else if (apiKey === 'sk-or-...') {
-  console.warn('WARNING: OPENROUTER_API_KEY still contains the .env.example placeholder value.');
-}
+const ttsRoutes = require('./routes/tts');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,6 +18,7 @@ app.use(express.json());
 app.use('/api/chat', chatRoutes);
 app.use('/api/claude-code', claudeCodeRoutes);
 app.use('/api/tools', toolsRoutes);
+app.use('/api/tts', ttsRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'client')));
 

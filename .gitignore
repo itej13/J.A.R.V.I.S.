@@ -4,3 +4,6 @@ node_modules/
 .DS_Store
 server.log
 graphify-out/
+pocket-tts-onnx-export/
+server/__pycache__/
+onnx_models/
